@@ -2,7 +2,7 @@ package home.ylitvinenko;
 
 public class StopGninnipSMysdroW {
     public static void main(String[] args) {
-        spinWords("Heyq wollef sroirraw");
+        spinWords("Hey wollef sroirraw");
         System.out.println(spinWords("Hey wollef sroirraw"));
 
     }

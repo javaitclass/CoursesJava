@@ -9,9 +9,7 @@ public class UnitVector {
         double onex = x/lenght;
         double oney = y/lenght;
         double onez = z/lenght;
-        String s1 = "Единичный вектор для вектора (" + x+","+y+","+z +")=>" + "("+ onex+","+oney+","+onez+")";
+        String s1 = "Единичный вектор для вектора (" + x +","+ y +","+ z +")=>" + "("+ onex+","+oney+","+onez+")";
         System.out.println(s1);
-
-
     }
 }
