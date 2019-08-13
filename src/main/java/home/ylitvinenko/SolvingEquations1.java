@@ -4,7 +4,7 @@ public class SolvingEquations1 {
     public static void main(String[] args) {
         System.out.println(solvingEquation1(10,20,30,50));
         System.out.println(solvingEquation2(10,20,30,50));
-        System.out.println(solvingEquation3(1,1,3,50));
+        System.out.println(solvingEquation3(1.1f,2.3f,3.33f,50.55f));
         System.out.println(solvingEquation4(10.11,20.22,30.22,50.11));
 
 
