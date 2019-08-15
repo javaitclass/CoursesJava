@@ -10,7 +10,7 @@ public class BiggestAndSmallestNumber {
 
         do {
             resultTemp = given%10;
-            if (resultTemp >= resultBig )
+            if (resultTemp >= resultBig)
             {
                 resultBig = resultTemp;
             }
