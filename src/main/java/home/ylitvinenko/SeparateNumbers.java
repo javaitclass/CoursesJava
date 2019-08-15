@@ -3,10 +3,8 @@ package home.ylitvinenko;
 public class SeparateNumbers {
     public static void main(String[] args) {
        separate(97852);
-
-
-
     }
+
     public static int separate (int number)
     {
         int result = number/10000;
