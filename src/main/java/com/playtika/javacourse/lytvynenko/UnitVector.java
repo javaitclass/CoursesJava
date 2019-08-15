@@ -1,6 +1,7 @@
 package com.playtika.javacourse.lytvynenko;
 
 public class UnitVector {
+
     public static void main(String[] args) {
         int x=645;
         int y=100;
@@ -11,5 +12,6 @@ public class UnitVector {
         double onez = z/lenght;
         String s1 = "Единичный вектор для вектора (" + x +","+ y +","+ z +")=>" + "("+ onex+","+oney+","+onez+")";
         System.out.println(s1);
+
     }
 }
