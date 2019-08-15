@@ -1,4 +1,4 @@
-package home.ylitvinenko;
+package com.playtika.javacourse.lytvynenko;
 
 public class UnitVector {
     public static void main(String[] args) {
