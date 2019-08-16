@@ -20,6 +20,7 @@ public class HomeWorkEmployer {
 
             return 0;
         }
+
         int result;
         result = n + interviewCount((n - 1));
         return result;
