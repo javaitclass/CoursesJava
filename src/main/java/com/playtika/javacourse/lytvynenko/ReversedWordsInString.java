@@ -16,15 +16,13 @@ public class ReversedWordsInString {
 
         for ( int i = 0 ;i <splittedStr.length; i++)
         {
-            temp = splittedStr[i]+ " ";
 
+            temp = splittedStr[i]+ " ";
             char [] arrFromTemp = temp.toCharArray();
+
             for (int j = arrFromTemp.length-1; j>=0 ;j--)
             {
-
-
                 result += arrFromTemp[j] ;
-
             }
         }
 
