@@ -11,7 +11,7 @@ public class CVCard {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please write your fullname");
         String fullName = scanner.nextLine();
-        int lenghtOfLine= Math.max(fullName.length(), COURSE_TITLE.length());
+        int lenghtOfLine = Math.max(fullName.length(), COURSE_TITLE.length());
 
         drowStarsLine(lenghtOfLine);
         centeredWords(lenghtOfLine, COURSE_TITLE);
