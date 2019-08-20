@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CVCard {
     static final String STUDENT_TITLE ="Student";
     static final String COURSE_TITLE ="Course: Java core";
-    static final int aditionalSymbols = 4;
+    static final int ADITIONAL_SYMBOLS = 4;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -14,22 +14,22 @@ public class CVCard {
         int lenghtOfLine= Math.max(fullName.length(), COURSE_TITLE.length());
 
         drowStarsLine(lenghtOfLine);
-        centeredWords(lenghtOfLine,COURSE_TITLE);
-        centeredWords(lenghtOfLine,STUDENT_TITLE);
-        centeredWords(lenghtOfLine,fullName);
+        centeredWords(lenghtOfLine, COURSE_TITLE);
+        centeredWords(lenghtOfLine, STUDENT_TITLE);
+        centeredWords(lenghtOfLine, fullName);
         drowStarsLine(lenghtOfLine);
     }
 
     public static void drowStarsLine (int lenghtOfLine) {
-        StringBuilder startsLine = new StringBuilder("");
-        for (int i = 0; i < lenghtOfLine + aditionalSymbols; i++) {
+        StringBuilder startsLine = new StringBuilder();
+        for (int i = 0; i < lenghtOfLine + ADITIONAL_SYMBOLS; i++) {
             startsLine.append("*");
         }
         System.out.println(startsLine);
     }
 
     public static void centeredWords(int lenghtOfLine, String wordsWriter) {
-        int c = lenghtOfLine+aditionalSymbols - wordsWriter.length();
+        int c = lenghtOfLine+ADITIONAL_SYMBOLS - wordsWriter.length();
         int a = c / 2;
         int b = c - a ;
         StringBuilder result = new StringBuilder("*");
