@@ -23,7 +23,7 @@ public class CVCard {
         for (int i = 0; i<(a-1); i++) {
             result.append(" ");
         }
-        result.append(wordsWriter) ;
+        result.append(wordsWriter);
         for (int j = 0; j < (b-1); j ++) {
             result.append(" ");
         }
