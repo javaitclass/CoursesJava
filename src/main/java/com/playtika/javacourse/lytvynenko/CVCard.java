@@ -5,21 +5,21 @@ public class CVCard {
     }
     public static void drowStarsLine () {
         String fullName = new String("Lytvynenko Yuriy Nikolaevich");
-        StringBuffer netwidth = new StringBuffer("");
-        for (int i = 0; i < fullName.length()+4;i++) {
-            netwidth.append("*");
+        StringBuilder startsLine = new StringBuilder("");
+        for (int i = 0; i < fullName.length()+4; i++) {
+            startsLine.append("*");
         }
-        System.out.println(netwidth);
-        System.out.println((centerOfWords(netwidth, "Course: Java core")));
-        System.out.println((centerOfWords(netwidth, "Student")));
-        System.out.println((centerOfWords(netwidth, fullName)));
-        System.out.println(netwidth);
+        System.out.println(startsLine);
+        System.out.println((centeredWords(startsLine, "Course: Java core")));
+        System.out.println((centeredWords(startsLine, "Student")));
+        System.out.println((centeredWords(startsLine, fullName)));
+        System.out.println(startsLine);
     }
-    public static StringBuffer centerOfWords(StringBuffer net, String wordsWriter) {
-        int c = net.length()- wordsWriter.length();
+    public static StringBuilder centeredWords(StringBuilder starsLine, String wordsWriter) {
+        int c = starsLine.length()- wordsWriter.length();
         int a = c / 2;
         int b = c - a ;
-        StringBuffer result = new StringBuffer("*");
+        StringBuilder result = new StringBuilder("*");
         for (int i = 0; i < (a-1); i++) {
             result.append(" ");
         }
