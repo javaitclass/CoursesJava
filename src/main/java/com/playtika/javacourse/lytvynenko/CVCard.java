@@ -1,61 +1,33 @@
 package com.playtika.javacourse.lytvynenko;
-
-import java.util.Scanner;
-
 public class CVCard {
-
     public static void main(String[] args) {
-
-
-        System.out.println("Please enter your full name");
-        netbuilder(new Scanner(System.in).nextLine());
-
+        drowStarsLine();
     }
-
-    public static void netbuilder (String fullname)
-    {
-
-        fullname = "* " + fullname + " *";
-        String netwidth = "";
-
-        for (int i = 0; i<fullname.length();i++)
-        {
-            netwidth += "*";
+    public static void drowStarsLine () {
+        String fullName = new String("Lytvynenko Yuriy Nikolaevich");
+        StringBuffer netwidth = new StringBuffer("");
+        for (int i = 0; i<fullName.length()+4;i++) {
+            netwidth.append("*");
         }
-
         System.out.println(netwidth);
-        System.out.println(conststrings(fullname,"Course: Java core"));
-        System.out.println(conststrings(fullname,"Student"));
-        System.out.println(fullname);
+        System.out.println((centerOfWords(netwidth,"Course: Java core")));
+        System.out.println((centerOfWords(netwidth,"Student")));
+        System.out.println((centerOfWords(netwidth,fullName)));
         System.out.println(netwidth);
-
-
     }
-    private static String conststrings (String name, String conststr)
-    {
-
-        int c = name.length()- conststr.length();
+    public static StringBuffer centerOfWords(StringBuffer net, String wordsWriter) {
+        int c = net.length()- wordsWriter.length();
         int a = c / 2;
         int b = c - a ;
-
-        String result = "*";
-        for (int i = 0; i<(a-1); i++)
-        {
-            result += " ";
+        StringBuffer result = new StringBuffer("*");
+        for (int i = 0; i<(a-1); i++) {
+            result.append(" ");
         }
-        result += conststr;
-
-
-        for (int j = 0; j < (b-1); j ++)
-        {
-            result +=" ";
-
+        result.append(wordsWriter) ;
+        for (int j = 0; j < (b-1); j ++) {
+            result.append(" ");
         }
-
-        result += "*";
-
+        result.append("*");
         return result;
     }
-
-
 }
