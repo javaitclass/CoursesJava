@@ -29,7 +29,7 @@ public class CVCard {
     }
 
     public static void centeredWords(int lenghtOfLine, String wordsWriter) {
-        int c = lenghtOfLine+ADITIONAL_SYMBOLS - wordsWriter.length();
+        int c = lenghtOfLine + ADITIONAL_SYMBOLS - wordsWriter.length();
         int a = c / 2;
         int b = c - a ;
         StringBuilder result = new StringBuilder("*");
