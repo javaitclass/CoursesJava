@@ -1,4 +1,4 @@
-package com.playtika.javacourse.lytvynenko;
+package home.ylitvinenko;
 
 import java.util.Random;
 
@@ -40,6 +40,10 @@ public class PracticePasswordGenerator {
                     symbol = getRandomSymbol(LETTER_ALPHABET );
                     break;
             }
+            //if(password.length() == 0 || password.charAt(password.length() - 1 != 0))){
+
+               // continue;
+          //  }
 
         password.append(symbol);
         }
