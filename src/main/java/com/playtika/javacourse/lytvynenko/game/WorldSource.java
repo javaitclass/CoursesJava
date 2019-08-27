@@ -12,6 +12,7 @@ public class WorldSource {
             "someword"
     };
 
+
     public String getWord (){
       int index =  ThreadLocalRandom.current().nextInt(WORDS.length - 1);
       return WORDS[index];

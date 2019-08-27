@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class GuessingGame {
     private final LetterMixer letterMixer;
     private  final WorldSource worldSource;
-   private  final Scanner scanner;
+    private  final Scanner scanner;
 
     public GuessingGame(Scanner scanner) {
         letterMixer = new LetterMixer();

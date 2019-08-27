@@ -22,5 +22,12 @@ public class Triangle {
         float square = (float) Math.sqrt(halfPerimeter * (halfPerimeter -a.distance(b)) * (halfPerimeter -b.distance(c)) * (halfPerimeter -a.distance(c)));
         return square;
     }
+    String type(){
+        if((b.distance(c) c.distance(a)) == a.distance(b) {
+
+        }
+
+        return "";
+    }
 
 }
