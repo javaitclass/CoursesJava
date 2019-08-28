@@ -1,15 +1,28 @@
 package com.playtika.javacourse.lytvynenko.triangle;
 
+import java.util.Scanner;
+
 public class RunProgram {
     public static void main(String[] args) {
-        Point a = new Point(2.2f,1.1f);
-        Point b = new Point(7.4f, 2.2f);
-        Point c = new Point(9.2f, 7.6f);
+        TrianglesGenerator trianglesGenerator = new TrianglesGenerator();
+        trianglesGenerator.generateArr();
+        Scanner scanner = new Scanner(System.in);
+        int classOfTriangle = scanner.nextInt();
 
-        Triangle triangle = new Triangle(a, b, c);
+        }
+
+        //Point a = new Point(1.0f,1.0f);
+      // Point b = new Point(1.0f, 5.0f);
+        //Point c = new Point(4.0f, 1.0f);
+        //Triangle triangle = new Triangle(trianglesGenerator.generateArr(),trianglesGenerator.generateArr(), trianglesGenerator.generateArr());
+        //System.out.println(triangle.perimeter());
+        //System.out.println(triangle.square());
 
 
-        System.out.println(triangle.perimeter());
-        System.out.println(triangle.square());
+
+    void findTriangle(int classOfTriangle){
+        switch (classOfTriangle){
+            case 1:
+        }
     }
 }

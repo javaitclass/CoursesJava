@@ -5,12 +5,13 @@ public class Point {
     private float y;
 
     public Point (float x , float y){
-        this.x = x;
-        this.y = y;
+        this.x = Math.round(x*10)/10;
+        this.y = Math.round(y*10)/10;
     }
 
     public float distance(Point pointTo) {
-        return (float) Math.sqrt((this.x * pointTo.x) + (this.y*pointTo.y));
+        float distance = (float) Math.sqrt((float)Math.pow(this.x - pointTo.x, 2) + (float)Math.pow(this.y - pointTo.y, 2));
+        return distance;
     }
 
 
