@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class RunProgram {
     public static void main(String[] args) {
         TrianglesGenerator trianglesGenerator = new TrianglesGenerator();
-        trianglesGenerator.generateArr();
+         Triangle arr [] = trianglesGenerator.generateArr();
+
+
         Scanner scanner = new Scanner(System.in);
         int classOfTriangle = scanner.nextInt();
 
@@ -21,6 +23,9 @@ public class RunProgram {
 
 
     void findTriangle(int classOfTriangle){
+        TrianglesGenerator arr = new TrianglesGenerator();
+
+
         switch (classOfTriangle){
             case 1:
         }
