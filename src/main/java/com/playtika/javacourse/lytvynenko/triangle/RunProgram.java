@@ -9,8 +9,6 @@ public class RunProgram {
         Scanner scanner = new Scanner(System.in);
         int classOfTriangle = scanner.nextInt();
         printInfoOfTriangle(arr, classOfTriangle);
-
-
     }
     public static void printInfoOfTriangle(Triangle[] arr, int classOfTriangle) {
         switch (classOfTriangle) {

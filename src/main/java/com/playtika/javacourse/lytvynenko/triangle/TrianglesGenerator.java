@@ -9,7 +9,6 @@ public class TrianglesGenerator {
 
         float randomNumber = (float) ThreadLocalRandom.current().nextDouble(bound);
         return randomNumber;
-
     }
    public Triangle[] generateArr () {
         Logger.printLog("Генерация 100000 треугольников…");
@@ -17,7 +16,6 @@ public class TrianglesGenerator {
         for (int i = 0; i < arrOfTriangles.length; i++){
             arrOfTriangles [i] = new Triangle( new Point(getRandomNumber(10),getRandomNumber(10)),new Point(getRandomNumber(10),getRandomNumber(10)), new Point(getRandomNumber(10),getRandomNumber(10)));
         }
-
        Logger.printLog("Выберите класс треугольника для поиска:");
        Logger.printLog("1. Равнобедренный");
        Logger.printLog("2. Равносторонний");
