@@ -8,7 +8,6 @@ public class RunProgram {
         Triangle[] arr = trianglesGenerator.generateArr();
         Scanner scanner = new Scanner(System.in);
         int classOfTriangle = scanner.nextInt();
-        //int classOfTriangle = 2;
         printInfoOfTriangle(arr, classOfTriangle);
 
 
@@ -51,7 +50,6 @@ public class RunProgram {
                         "[a(" + arr[i].getPointA().getX() + ";" + arr[i].getPointA().getY() + ") " +
                         "b(" + arr[i].getPointB().getX() + ";" + arr[i].getPointB().getY() + ") " +
                         "c(" + arr[i].getPointC().getX() + ";" + arr[i].getPointC().getY() + ")");
-
                 System.out.println("Периметр: " + arr[i].perimeter());
                 System.out.println("Площадь: " + arr[i].square());
                 break;
