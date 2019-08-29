@@ -11,7 +11,6 @@ public class Triangle {
         this.c = c;
     }
 
-
     public Point getPointA() {
         return a;
     }
