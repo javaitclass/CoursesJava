@@ -2,7 +2,6 @@ package com.playtika.javacourse.lytvynenko.triangle;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class Logger {
 

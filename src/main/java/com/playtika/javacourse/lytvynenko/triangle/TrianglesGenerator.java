@@ -3,8 +3,6 @@ package com.playtika.javacourse.lytvynenko.triangle;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TrianglesGenerator {
-
-
     public float getRandomNumber(int bound){
 
         float randomNumber = (float) ThreadLocalRandom.current().nextDouble(bound);
@@ -23,9 +21,5 @@ public class TrianglesGenerator {
        Logger.printLog("4. Произвольный");
 
        return arrOfTriangles;
-
-
    }
-
-
 }
