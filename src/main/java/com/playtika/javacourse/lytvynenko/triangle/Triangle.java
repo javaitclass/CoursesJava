@@ -35,6 +35,11 @@ public class Triangle {
         return square;
     }
 
+   @Override
+    public String toString() {
+        return "Треугольник [a" + getPointA() + " b" + getPointB() + " c" + getPointC()+ "]";
+    }
+
     String type() {
         String type;
         if (Float.compare(a.distance(b), b.distance(c)) == 0) {
