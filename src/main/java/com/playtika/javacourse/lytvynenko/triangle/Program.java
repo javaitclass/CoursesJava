@@ -8,11 +8,13 @@ public class Program {
         Triangle[] arr = trianglesGenerator.generateArr();
         Scanner scanner = new Scanner(System.in);
         int classOfTriangle = scanner.nextInt();
-        printInfoOfTriangle(arr, classOfTriangle);
-        countTypesOfTriangles(arr);
+        Program print = new Program();
+        print.printInfoOfTriangle(arr, classOfTriangle);
+        Program count = new Program();
+        count.countTypesOfTriangles(arr);
     }
 
-    public static void printInfoOfTriangle(Triangle[] arr, int classOfTriangle) {
+    public  void printInfoOfTriangle(Triangle[] arr, int classOfTriangle) {
         switch (classOfTriangle) {
             case 1:
                 infoOfTriangle(arr, "Равнобедренный");
@@ -32,7 +34,7 @@ public class Program {
         }
     }
 
-    public static void infoOfTriangle(Triangle[] arr, String inputType) {
+    public  void infoOfTriangle(Triangle[] arr, String inputType) {
         for(int i = 0; i<arr.length; i++)
         {
             if(inputType.equals(arr[i].type()) & arr[i].square() > 0) {
@@ -46,7 +48,7 @@ public class Program {
         }
     }
 
-    public static void countTypesOfTriangles (Triangle[] arr) {
+    public  void countTypesOfTriangles (Triangle[] arr) {
         int countIsosceles = 0;
         int countEquilateral = 0;
         int countRectangular = 0;
