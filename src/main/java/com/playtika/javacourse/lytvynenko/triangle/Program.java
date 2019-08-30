@@ -26,7 +26,7 @@ public class Program {
                 infoOfTriangle(arr, "Произвольный");
                 break;
             default:
-                System.out.println("Неправильно указан тип треуголтника, выберите один из данных типов(1-4");
+                System.out.println("Неправильно указан тип треугольника, выберите один из данных типов(1-4)");
                 break;
         }
     }
