@@ -25,13 +25,14 @@ public class Triangle {
 
     float perimeter() {
         float perimeter = a.distance(b) + b.distance(c) + a.distance(c);
+        perimeter = (float)((int)( perimeter *100f ))/100f;
         return perimeter;
     }
 
     float square() {
         float halfPerimeter = perimeter() / 2;
         float square = (float) Math.sqrt(halfPerimeter * (halfPerimeter - a.distance(b)) * (halfPerimeter - b.distance(c)) * (halfPerimeter - a.distance(c)));
-        Math.round(square);
+        square = (float)((int)( square *100f ))/100f;
         return square;
     }
 
