@@ -9,6 +9,7 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         int classOfTriangle = scanner.nextInt();
         printInfoOfTriangle(arr, classOfTriangle);
+        countTypesOfTriangles(arr);
     }
 
     public static void printInfoOfTriangle(Triangle[] arr, int classOfTriangle) {
@@ -43,5 +44,33 @@ public class Program {
                 break;
             }
         }
+    }
+
+    public static void countTypesOfTriangles (Triangle[] arr) {
+        int countIsosceles = 0;
+        int countEquilateral = 0;
+        int countRectangular = 0;
+        int countArbitrary = 0;
+        for(int i = 0; i<arr.length; i++) {
+            switch (arr[i].type()){
+
+                case "Равнобедренный":
+                    countIsosceles ++;
+                    break;
+                case "Равносторонний":
+                    countEquilateral++;
+                    break;
+                case "Прямоугольный":
+                    countRectangular++;
+                    break;
+                case "Произвольный":
+                    countArbitrary++;
+                    break;
+            }
+        }
+        System.out.println("Количество равнобедренных треугольников: " + countIsosceles);
+        System.out.println("Количество равносторонних треугольников: " + countEquilateral);
+        System.out.println("Количество прямоугольных треугольников: " + countRectangular);
+        System.out.println("Количество произвольных треугольников: " + countArbitrary);
     }
 }

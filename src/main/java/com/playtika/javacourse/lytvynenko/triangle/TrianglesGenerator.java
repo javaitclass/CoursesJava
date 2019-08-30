@@ -12,7 +12,7 @@ public class TrianglesGenerator {
     }
    public Triangle[] generateArr () {
         Logger.printLog("Генерация 100000 треугольников…");
-        Triangle [] arrOfTriangles = new Triangle[1000000];
+        Triangle [] arrOfTriangles = new Triangle[100000];
         for (int i = 0; i < arrOfTriangles.length; i++){
             arrOfTriangles [i] = new Triangle( new Point(getRandomNumber(10),getRandomNumber(10)),new Point(getRandomNumber(10),getRandomNumber(10)), new Point(getRandomNumber(10),getRandomNumber(10)));
         }
