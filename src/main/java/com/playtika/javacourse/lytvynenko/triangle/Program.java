@@ -37,7 +37,7 @@ public class Program {
     public  void infoOfTriangle(Triangle[] arr, String inputType) {
         for(int i = 0; i<arr.length; i++)
         {
-            if(inputType.equals(arr[i].type()) & arr[i].square() > 0) {
+            if(inputType.equals(arr[i].type())) {
                 System.out.println("Найден " + inputType + " треугольник");
                 System.out.println("Индекс: " + i);
                 System.out.println(arr[i]);

@@ -25,14 +25,14 @@ public class Triangle {
 
     float perimeter() {
         float perimeter = a.distance(b) + b.distance(c) + a.distance(c);
-        perimeter = (float)((int)( perimeter *100f ))/100f;
+        perimeter = Round.rounding(perimeter);
         return perimeter;
     }
 
     float square() {
         float halfPerimeter = perimeter() / 2;
         float square = (float) Math.sqrt(halfPerimeter * (halfPerimeter - a.distance(b)) * (halfPerimeter - b.distance(c)) * (halfPerimeter - a.distance(c)));
-        square = (float)((int)( square *100f ))/100f;
+        square = Round.rounding(square);
         return square;
     }
 
@@ -42,25 +42,37 @@ public class Triangle {
     }
 
     String type() {
-        String type;
-        if (Float.compare(a.distance(b), b.distance(c)) == 0) {
-            if (Float.compare(a.distance(b), a.distance(c)) == 0) {
-                return "Равносторонний";
-            } else {
-                return "Равнобедренный";
-            }
-        } else if ((Float.compare(a.distance(c), b.distance(c)) == 0)) {
+        if (isIsosceles()){
+            return "Равносторонний";
+        } else if(isEquilateral()){
             return "Равнобедренный";
-        } else if ((Float.compare(a.distance(b), a.distance(c)) == 0)) {
-            return "Равнобедренный";
-        } else if ((Float.compare((float) Math.pow(a.distance(b), 2), ((float) Math.pow(a.distance(c), 2) + (float) Math.pow(b.distance(c), 2))) == 0)) {
-            return "Прямоугольный";
-        } else if ((Float.compare((float) Math.pow(a.distance(c), 2), ((float) Math.pow(a.distance(b), 2) + (float) Math.pow(b.distance(c), 2))) == 0)) {
-            return "Прямоугольный";
-        } else if ((Float.compare((float) Math.pow(b.distance(c), 2), ((float) Math.pow(a.distance(b), 2) + (float) Math.pow(a.distance(c), 2))) == 0)) {
+        } else if (isRectangular()){
             return "Прямоугольный";
         }
         return "Произвольный";
     }
 
+    private boolean isIsosceles (){
+        if (Float.compare(a.distance(b), b.distance(c)) == 0 & (Float.compare(a.distance(b), a.distance(c)) == 0)) {
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    private boolean isEquilateral (){
+        if (Float.compare(a.distance(b), b.distance(c)) == 0 || (Float.compare(a.distance(b), a.distance(c)) == 0) || (Float.compare(a.distance(c), c.distance(b)) == 0)) {
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    private boolean isRectangular (){
+        if ((Float.compare((float) Math.pow(a.distance(b), 2), ((float) Math.pow(a.distance(c), 2) + (float) Math.pow(b.distance(c), 2))) == 0) || (Float.compare((float) Math.pow(a.distance(c), 2), ((float) Math.pow(a.distance(b), 2) + (float) Math.pow(b.distance(c), 2))) == 0) || (Float.compare((float) Math.pow(b.distance(c), 2), ((float) Math.pow(a.distance(b), 2) + (float) Math.pow(a.distance(c), 2))) == 0)) {
+            return true;
+        } else{
+            return false;
+        }
+    }
 }
