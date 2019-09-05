@@ -65,7 +65,7 @@ public class Triangle {
     }
 
     private boolean isIsosceles (){
-        if (Float.compare(getSideAB(), getSideBC()) == 0 &
+        if (Float.compare(getSideAB(), getSideBC()) == 0 &&
                 (Float.compare(getSideAB(), getSideAC()) == 0)) {
             return true;
         }
