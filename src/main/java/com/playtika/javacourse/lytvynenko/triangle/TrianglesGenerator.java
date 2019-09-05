@@ -15,7 +15,6 @@ public class TrianglesGenerator {
         int i = 0;
         while (i < arrOfTriangles.length){
             arrOfTriangles [i] = new Triangle( new Point(getRandomNumber(10),getRandomNumber(10)),new Point(getRandomNumber(10),getRandomNumber(10)), new Point(getRandomNumber(10),getRandomNumber(10)));
-
             if ((arrOfTriangles[i].square() > 0)) {
                 i++;
             }
