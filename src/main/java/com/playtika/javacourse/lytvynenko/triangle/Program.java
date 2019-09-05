@@ -3,6 +3,7 @@ package com.playtika.javacourse.lytvynenko.triangle;
 import java.util.Scanner;
 
 public class Program {
+
     public static void main(String[] args) {
         TrianglesGenerator trianglesGenerator = new TrianglesGenerator();
         Triangle[] arr = trianglesGenerator.generateArr();
@@ -53,7 +54,7 @@ public class Program {
         int countEquilateral = 0;
         int countRectangular = 0;
         int countArbitrary = 0;
-        for(int i = 0; i<arr.length; i++) {
+        for(int i = 0; i < arr.length; i++) {
             switch (arr[i].type()){
 
                 case "Равнобедренный":
