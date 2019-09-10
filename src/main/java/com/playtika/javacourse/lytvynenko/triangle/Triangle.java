@@ -24,27 +24,27 @@ public class Triangle {
     }
 
     public float getSideAB(){
-        return Round.rounding(a.distance(b));
+        return MathOperator.rounding(a.distance(b));
     }
 
     public float getSideAC(){
-        return Round.rounding(a.distance(c));
+        return MathOperator.rounding(a.distance(c));
     }
 
     public float getSideBC(){
-        return Round.rounding(b.distance(c));
+        return MathOperator.rounding(b.distance(c));
     }
 
    public float perimeter() {
         float perimeter = getSideAB() + getSideAC() + getSideBC();
-        perimeter = Round.rounding(perimeter);
+        perimeter = MathOperator.rounding(perimeter);
         return perimeter;
     }
 
     public float square() {
         float halfPerimeter = perimeter() / 2;
         float square = (float) Math.sqrt(halfPerimeter * (halfPerimeter - getSideAB()) * (halfPerimeter - getSideBC()) * (halfPerimeter - getSideAC()));
-        square = Round.rounding(square);
+        square = MathOperator.rounding(square);
         return square;
     }
 
@@ -82,9 +82,7 @@ public class Triangle {
     }
 
     private boolean isRectangular (){
-        if ((Float.compare((float) Math.pow(getSideAB(), 2), ((float) Math.pow(getSideAC(), 2) + (float) Math.pow(getSideBC(), 2))) == 0) ||
-                (Float.compare((float) Math.pow(getSideAC(), 2), ((float) Math.pow(getSideAB(), 2) + (float) Math.pow(getSideBC(), 2))) == 0) ||
-                (Float.compare((float) Math.pow(getSideBC(), 2), ((float) Math.pow(getSideAB(), 2) + (float) Math.pow(getSideAC(), 2))) == 0)) {
+        if (MathOperator.calculatePythTheorem(getSideAB(), getSideAC(), getSideBC())) {
             return true;
         }
             return false;

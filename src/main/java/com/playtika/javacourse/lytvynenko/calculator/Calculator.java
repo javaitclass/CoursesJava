@@ -20,7 +20,7 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         String enteredText = scanner.nextLine();
         Calculator calculator = new Calculator();
-        System.out.println(calculator.calculate(Parser.firstOperandParsing(enteredText),Parser.secondOperandParsing(enteredText), Parser.operationParsing(enteredText)));
-
+        double result = calculator.calculate(Parser.firstOperandParsing(enteredText),Parser.secondOperandParsing(enteredText), Parser.operationParsing(enteredText));
+        System.out.println(result);
     }
 }

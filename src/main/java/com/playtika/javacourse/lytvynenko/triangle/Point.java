@@ -5,8 +5,8 @@ public class Point {
     private final float y;
 
     public Point (float x , float y){
-        this.x = Round.rounding(x);
-        this.y = Round.rounding(y);
+        this.x = MathOperator.rounding(x);
+        this.y = MathOperator.rounding(y);
     }
 
     public float getX() {
@@ -24,7 +24,7 @@ public class Point {
 
     public float distance(Point pointTo) {
         float distance = (float) Math.sqrt((float)Math.pow(this.x - pointTo.x, 2) + (float)Math.pow(this.y - pointTo.y, 2));
-        distance = Round.rounding(distance);
+        distance = MathOperator.rounding(distance);
         return distance;
     }
 }
