@@ -15,9 +15,12 @@ public class Calculator {
 
     public static void main(String[] args) {
         System.out.println("Please enter two number and operation with space between");
-       Scanner scanner = new Scanner(System.in);
+        System.out.println("Available operators:");
+        System.out.println("'*', '-', '+', '/', 'pov', 'log', 'sqrt'");
+        Scanner scanner = new Scanner(System.in);
         String enteredText = scanner.nextLine();
         Calculator calculator = new Calculator();
         System.out.println(calculator.calculate(Parser.firstOperandParsing(enteredText),Parser.secondOperandParsing(enteredText), Parser.operationParsing(enteredText)));
+
     }
 }
