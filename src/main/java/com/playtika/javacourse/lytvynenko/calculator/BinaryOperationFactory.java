@@ -12,7 +12,7 @@ public class BinaryOperationFactory {
             case "log": return new Logarithm();
             case "sqrt": return new SqrtPow();
 
-            default: throw new OperationExeption("unknown оператор");
+            default: throw new OperationExeption("unknown operator");
         }
     }
 }

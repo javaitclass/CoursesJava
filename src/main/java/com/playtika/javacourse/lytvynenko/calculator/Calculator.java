@@ -16,7 +16,7 @@ public class Calculator {
         opearationParsed = parser.operationParsing(enteredText);
         operation = new BinaryOperationFactory().getOperationFor(opearationParsed);
         if (operation == null) {
-               throw new OperationExeption("unknown оператор");
+               throw new OperationExeption("unknown operator");
         }
         return operation.resultFor(firstOpearandParsed, secondOpearandParsed);
     }
