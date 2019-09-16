@@ -3,22 +3,17 @@ package com.playtika.javacourse.lytvynenko.calculator;
 public class BinaryOperationFactory {
 
     public BinaryOperation getOperationFor(String operator) {
-        if ("*".equals(operator)) {
-            return new Multiplication();
-        } else if ("-".equals(operator)){
-            return new Substraction();
-        }else if ("+".equals(operator)){
-            return new Adition();
-        }else if ("/".equals(operator)){
-            return new Division();
-        }else if ("pov".equals(operator)){
-            return new Exponent();
-        }else if ("log".equals(operator)){
-            return new Logarithm();
-        }else if ("sqrt".equals(operator)){
-            return new SqrtPow();
+        switch (operator){
+            case "*": return new Multiplication();
+            case "-": return new Substraction();
+            case "+": return new Adition();
+            case "/": return new Division();
+            case "pov": return new Exponent();
+            case "log": return new Logarithm();
+            case "sqrt": return new SqrtPow();
+
+            default: throw new OperationExeption("unknown оператор");
         }
-        return null;
     }
 }
 

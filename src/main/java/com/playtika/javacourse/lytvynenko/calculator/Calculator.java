@@ -3,13 +3,22 @@ package com.playtika.javacourse.lytvynenko.calculator;
 import java.util.Scanner;
 
 public class Calculator {
+    private BinaryOperation operation;
+    private Parser parser;
+    private double firstOpearandParsed;
+    private double secondOpearandParsed;
+    private String opearationParsed;
 
-    public double calculate(double val1, double val2, String enteredText) throws OperationExeption {
-        BinaryOperation operation = new BinaryOperationFactory().getOperationFor(enteredText);
-       if (operation == null) {
+    public double calculate(String enteredText) throws OperationExeption {
+        parser = new Parser();
+        firstOpearandParsed = parser.firstOperandParsing(enteredText);
+        secondOpearandParsed = parser.secondOperandParsing(enteredText);
+        opearationParsed = parser.operationParsing(enteredText);
+        operation = new BinaryOperationFactory().getOperationFor(opearationParsed);
+        if (operation == null) {
                throw new OperationExeption("unknown оператор");
         }
-        return operation.resultFor(val1, val2);
+        return operation.resultFor(firstOpearandParsed, secondOpearandParsed);
     }
 
     public static void main(String[] args) throws OperationExeption {
@@ -19,8 +28,6 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         String enteredText = scanner.nextLine();
         Calculator calculator = new Calculator();
-        double result = 0;
-        result = calculator.calculate(Parser.firstOperandParsing(enteredText),Parser.secondOperandParsing(enteredText), Parser.operationParsing(enteredText));
-        System.out.println(result);
+        System.out.println(calculator.calculate(enteredText));
     }
 }
