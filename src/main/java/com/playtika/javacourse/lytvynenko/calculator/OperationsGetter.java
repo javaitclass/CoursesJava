@@ -10,11 +10,9 @@ public class OperationsGetter {
         this.firstOpearandParsed = firstOpearandParsed;
         this.secondOpearandParsed = secondOpearandParsed;
         this.opearationParsed = opearationParsed;
-
     }
 
     public OperationsGetter() {
-
     }
 
     public double getFirstOpearandParsed() {
