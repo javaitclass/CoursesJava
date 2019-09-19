@@ -1,7 +1,8 @@
 package com.playtika.javacourse.lytvynenko.calculator;
 
 public class Parser {
-    public String[] splitting (String enteredText){
+
+    private String[] splitting (String enteredText){
         return enteredText.split(" ");
     }
 

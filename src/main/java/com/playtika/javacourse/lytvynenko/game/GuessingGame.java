@@ -4,6 +4,7 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class GuessingGame {
+
     private final LetterMixer letterMixer;
     private  final WorldSource worldSource;
     private  final Scanner scanner;
@@ -16,8 +17,7 @@ public class GuessingGame {
     }
 
     public void playGame(){
-        //System.out.println("Guess a word");
-        //System.out.printf("Guess a word: %s");
+
         String word = worldSource.getWord();
         String mixedWord = letterMixer.mix(word);
         System.out.printf("Guess a word: %s%n",mixedWord);

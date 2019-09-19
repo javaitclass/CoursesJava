@@ -2,23 +2,17 @@ package com.playtika.javacourse.lytvynenko.calculator;
 
 import java.util.Scanner;
 
-public class Calculator {
-    private BinaryOperation operation;
-    private Parser parser;
-    private double firstOpearandParsed;
-    private double secondOpearandParsed;
-    private String opearationParsed;
+import java.util.Scanner;
 
-    public double calculate(String enteredText) throws OperationExeption {
-        parser = new Parser();
-        firstOpearandParsed = parser.firstOperandParsing(enteredText);
-        secondOpearandParsed = parser.secondOperandParsing(enteredText);
-        opearationParsed = parser.operationParsing(enteredText);
-        operation = new BinaryOperationFactory().getOperationFor(opearationParsed);
+public class Calculator {
+    private BinaryOperationFactory operationFactory = new BinaryOperationFactory();
+
+    public double calculate(OperationsGetter operators) throws OperationExeption {
+        BinaryOperation operation = operationFactory.getOperationFor(operators.getOpearationParsed());
         if (operation == null) {
-               throw new OperationExeption("unknown operator");
+            throw new OperationExeption("unknown operator");
         }
-        return operation.resultFor(firstOpearandParsed, secondOpearandParsed);
+        return operation.resultFor(operators.getFirstOpearandParsed(), operators.getSecondOpearandParsed());
     }
 
     public static void main(String[] args) throws OperationExeption {
@@ -27,7 +21,8 @@ public class Calculator {
         System.out.println("'*', '-', '+', '/', 'pov', 'log', 'sqrt'");
         Scanner scanner = new Scanner(System.in);
         String enteredText = scanner.nextLine();
+        OperationsGetter operations = new OperationsGetter().operate(enteredText);
         Calculator calculator = new Calculator();
-        System.out.println(calculator.calculate(enteredText));
+        System.out.println(calculator.calculate(operations));
     }
 }
