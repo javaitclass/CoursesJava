@@ -2,12 +2,10 @@ package com.playtika.javacourse.lytvynenko.calculator;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class Calculator {
     private BinaryOperationFactory operationFactory = new BinaryOperationFactory();
 
-    public double calculate(OperationsGetter operators) throws OperationExeption {
+    public double calculate(Arguments operators) throws OperationExeption {
         BinaryOperation operation = operationFactory.getOperationFor(operators.getOpearationParsed());
         if (operation == null) {
             throw new OperationExeption("unknown operator");
@@ -21,8 +19,8 @@ public class Calculator {
         System.out.println("'*', '-', '+', '/', 'pov', 'log', 'sqrt'");
         Scanner scanner = new Scanner(System.in);
         String enteredText = scanner.nextLine();
-        OperationsGetter operations = new OperationsGetter().operate(enteredText);
+        Arguments arguments = new Parser().getParsedArguments(enteredText);
         Calculator calculator = new Calculator();
-        System.out.println(calculator.calculate(operations));
+        System.out.println(calculator.calculate(arguments));
     }
 }

@@ -6,17 +6,13 @@ public class Parser {
         return enteredText.split(" ");
     }
 
-    public double firstOperandParsing (String enteredText){
-        enteredText = splitting(enteredText)[0];
-        return Double.parseDouble(enteredText);
-    }
+    public Arguments getParsedArguments (String enteredText){
+        String [] arr = enteredText.split(" ");
+        double firstOpearandParsed = Double.parseDouble(arr[0]);
+        double secondOpearandParsed = Double.parseDouble(arr[2]);
+        String opearationParsed = arr[1];
 
-    public String operationParsing (String enteredText){
-        return splitting(enteredText)[1];
-    }
-
-    public double secondOperandParsing (String enteredText){
-        enteredText = splitting(enteredText)[2];
-        return Double.parseDouble(enteredText);
+        return new Arguments(firstOpearandParsed,secondOpearandParsed,opearationParsed);
     }
 }
+
