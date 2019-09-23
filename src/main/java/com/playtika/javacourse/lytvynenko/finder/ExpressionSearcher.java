@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,13 +36,9 @@ public class ExpressionSearcher extends SimpleFileVisitor<Path> {
                     System.out.printf("\t %d: %s\n", i, line);
                 }
                 i++;
-
             }
-
         } catch (CharacterCodingException ex){
         }
-
         return FileVisitResult.CONTINUE;
     }
-
 }
