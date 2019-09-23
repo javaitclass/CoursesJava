@@ -9,6 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ExpressionSearcher extends SimpleFileVisitor<Path> {
     private final  String expression;
@@ -20,11 +22,14 @@ public class ExpressionSearcher extends SimpleFileVisitor<Path> {
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
             throws IOException     {
         try ( BufferedReader reader = Files.newBufferedReader(file)) {
+            Pattern pattern = Pattern.compile(expression);
             String line ;
             int i = 0;
-            boolean isNotPrintFileName= true;
-            while ((line=reader.readLine()) != null) {
-                if (line.contains(expression)) {
+            boolean isNotPrintFileName = true;
+            while ((line = reader.readLine()) != null) {
+                Matcher matcher = pattern.matcher(line);
+                boolean equal = matcher.find();
+                if (equal) {
                     if(isNotPrintFileName) {
                         System.out.println(file.toAbsolutePath().toString());
                         isNotPrintFileName = false;
@@ -37,8 +42,6 @@ public class ExpressionSearcher extends SimpleFileVisitor<Path> {
 
         } catch (CharacterCodingException ex){
         }
-
-
 
         return FileVisitResult.CONTINUE;
     }

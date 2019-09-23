@@ -15,15 +15,31 @@ public class Finder {
 
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("Enter 2 arg");
+            try {
+                throw new IOException();
+            } catch (IOException e) {
+                System.out.println(e + "   please enter 2 arg: ");
+            }
             return;
         }
+        if (!Files.isRegularFile(Paths.get(args[0]))) {
+            try {
+                throw new IOException();
+            } catch (IOException e) {
+                System.out.println(e + "  File not found ");
+            }
+            return;
+        }
+
         if (!Files.isReadable(Paths.get(args[0]))) {
-            System.out.println("Invalid path");
+            try {
+                throw new IOException();
+            } catch (IOException e) {
+                System.out.println(e + "  Access to file is denied");
+            }
             return;
         }
         Finder finder = new Finder();
         finder.find(args[0], args[1]);
     }
-
 }
