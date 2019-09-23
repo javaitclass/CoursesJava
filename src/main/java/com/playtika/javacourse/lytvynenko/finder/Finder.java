@@ -30,7 +30,6 @@ public class Finder {
             }
             return;
         }
-
         if (!Files.isReadable(Paths.get(args[0]))) {
             try {
                 throw new IOException();
