@@ -16,12 +16,13 @@ public class ExpressionSearcher extends SimpleFileVisitor<Path> {
 
     public ExpressionSearcher(String expression){
         this.expression =  expression ;
+
     }
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
             throws IOException     {
         try ( BufferedReader reader = Files.newBufferedReader(file)) {
-            Pattern pattern = Pattern.compile(expression);
+            Pattern pattern = Pattern.compile(this.expression);
             String line ;
             int i = 0;
             boolean isNotPrintFileName = true;

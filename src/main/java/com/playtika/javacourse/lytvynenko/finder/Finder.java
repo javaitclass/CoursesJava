@@ -14,6 +14,9 @@ public class Finder {
     }
 
     public static void main(String[] args) {
+        String path = args[0];
+        String expression = args[1];
+
         if (args.length != 2) {
             try {
                 throw new IOException();
@@ -22,23 +25,15 @@ public class Finder {
             }
             return;
         }
-        if (!Files.isRegularFile(Paths.get(args[0]))) {
-            try {
-                throw new IOException();
-            } catch (IOException e) {
-                System.out.println(e + "  File not found ");
-            }
+        if (!Files.isRegularFile(Paths.get(path))) {
+                System.out.println(" File not found ");
             return;
         }
-        if (!Files.isReadable(Paths.get(args[0]))) {
-            try {
-                throw new IOException();
-            } catch (IOException e) {
-                System.out.println(e + "  Access to file is denied");
-            }
+        if (!Files.isReadable(Paths.get(path))) {
+                System.out.println("Access to file is denied");
             return;
         }
         Finder finder = new Finder();
-        finder.find(args[0], args[1]);
+        finder.find(path, expression);
     }
 }
