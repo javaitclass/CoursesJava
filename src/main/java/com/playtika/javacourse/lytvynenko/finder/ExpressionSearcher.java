@@ -10,15 +10,15 @@ public class ExpressionSearcher  {
 
         try {
             Pattern pattern = Pattern.compile(expression);
+            LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(file));
             String line ;
             int lineNumber;
             boolean equal;
-            LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(file));
             while ((line = lineNumberReader.readLine()) != null) {
-                lineNumber = lineNumberReader.getLineNumber();
                 Matcher matcher = pattern.matcher(line);
                 equal = matcher.find();
                 if (equal) {
+                    lineNumber = lineNumberReader.getLineNumber();
                     System.out.println(lineNumber + " " + line);
                 }
             }
