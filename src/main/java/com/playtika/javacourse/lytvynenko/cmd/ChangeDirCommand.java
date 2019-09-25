@@ -2,23 +2,28 @@ package com.playtika.javacourse.lytvynenko.cmd;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ChangeDirCommand implements Command {
-    private Path path;
+    private String[] args;
 
-    public ChangeDirCommand(Path path) {
-        this.path = path;
+    public ChangeDirCommand(String[] args) {
+        this.args = args;
     }
 
     @Override
     public void execute(Context context) {
-        Path newPass;
-        if(path.isAbsolute()){
-            newPass = path;
-            context.setPath(path);
-        } else{
-             newPass = context.getPath().resolve(path).toAbsolutePath();
+        if (args.length != 2){
+            System.out.println("expected 1 argument");
+            return;
         }
+
+        Path newPass = Paths.get(args[1]);
+        if(!newPass.isAbsolute()){
+            newPass = context.getPath().resolve(newPass).normalize().toAbsolutePath();
+
+        }
+
         if(Files.isDirectory(newPass)){
             context.setPath(newPass);
         } else{
