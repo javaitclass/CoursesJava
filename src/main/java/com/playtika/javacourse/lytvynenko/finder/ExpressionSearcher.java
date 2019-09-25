@@ -11,11 +11,13 @@ public class ExpressionSearcher  {
         try {
             Pattern pattern = Pattern.compile(expression);
             String line ;
+            int lineNumber;
+            boolean equal;
             LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(file));
             while ((line = lineNumberReader.readLine()) != null) {
-                int lineNumber = lineNumberReader.getLineNumber();
+                lineNumber = lineNumberReader.getLineNumber();
                 Matcher matcher = pattern.matcher(line);
-                boolean equal = matcher.find();
+                equal = matcher.find();
                 if (equal) {
                     System.out.println(lineNumber + " " + line);
                 }
