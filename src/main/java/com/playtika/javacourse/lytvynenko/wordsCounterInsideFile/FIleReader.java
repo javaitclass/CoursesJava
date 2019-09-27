@@ -1,6 +1,5 @@
 package com.playtika.javacourse.lytvynenko.wordsCounterInsideFile;
 
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,6 +10,7 @@ public class FIleReader {
 
         String file = args[0];
         Path path = Paths.get(file);
+
         if (args.length != 1) {
             try {
                 throw new IOException();
@@ -27,6 +27,7 @@ public class FIleReader {
             System.out.println("Access to file is denied");
             return;
         }
+        System.out.println(path);
         WordsCounter wordsCounter = new WordsCounter();
         wordsCounter.count(file);
     }

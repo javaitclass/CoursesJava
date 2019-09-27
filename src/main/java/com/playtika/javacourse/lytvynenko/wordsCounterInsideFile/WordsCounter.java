@@ -3,8 +3,6 @@ package com.playtika.javacourse.lytvynenko.wordsCounterInsideFile;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.TreeMap;
 
 public class WordsCounter {
@@ -15,16 +13,20 @@ public class WordsCounter {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = bufferedReader.readLine()) != null){
-                String[] arrString = line.split(" ");
+                String[] arrString = line.split("[-. ,()]");
                 for (String s : arrString) {
-                    if (treeMap.containsKey(s)) {
-                        treeMap.computeIfPresent(s, (k, v) -> v = ++v);
-                    } else {
-                        treeMap.put(s, 1);
+                    if (!s.isEmpty()) {
+                        if (treeMap.containsKey(s)) {
+                            treeMap.computeIfPresent(s, (k, v) -> v = ++v);
+                        } else {
+                            treeMap.put(s, 1);
+                        }
                     }
                 }
             }
-            System.out.println(treeMap.toString());
+            treeMap.entrySet().forEach(entry->{
+                System.out.println(entry.getKey() + " - " + entry.getValue());
+            });
 
         } catch (IOException e) {
             System.out.println("Something went wrong" + e);
