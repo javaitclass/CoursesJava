@@ -1,11 +1,11 @@
-package com.playtika.javacourse.lytvynenko.wordsCounterInsideFile;
+package com.playtika.javacourse.lytvynenko.wordscounter;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class FIleReader {
+public class FIleDataReader {
     public static void main(String[] args) {
 
         String file = args[0];
