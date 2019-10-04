@@ -24,7 +24,7 @@ public class FrequencyLettersDictionary {
                     char letter = line.charAt(i);
                     if (letter >= 'а' && letter <= 'я'){
                         treeMap.compute(letter, (k, v) -> v == null ? 1 : ++v);
-                        globalCounter ++;
+                        globalCounter++;
                     }
                 }
             }

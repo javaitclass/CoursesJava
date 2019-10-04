@@ -13,10 +13,10 @@ public class Program {
         String textFile = args[0];
         Path path = Paths.get(textFile);
 
-        //Files.list(path).forEach(
-                      //  p ->  {}
-
-               // );
+//        Files.list(path).forEach(
+//                       p ->  {}
+//
+//                );
 
         if (args.length != 1) {
             try {

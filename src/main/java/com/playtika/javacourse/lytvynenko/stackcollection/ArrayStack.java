@@ -6,6 +6,19 @@ import java.util.Iterator;
 
 public class ArrayStack<E> extends AbstractCollection implements Stack {
 
+    private class MyIterator implements Iterator {
+
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public Object next() {
+            return null;
+        }
+    }
+
 
     private final static int DEFAULT_SIZE_OF_ARRAY = 10;
     private Object[] elements;
@@ -54,22 +67,10 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
         return  (E) o;
     }
 
-
    @Override
     public Iterator iterator() {
-
-
-
-        if(isEmpty()){
-            System.out.println("Stack is empty");
-            return null;
+       return new MyIterator();
         }
-
-        return null;
-    }
-
-
-
 }
 
 
