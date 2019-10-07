@@ -3,19 +3,28 @@ package com.playtika.javacourse.lytvynenko.stackcollection;
 import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class ArrayStack<E> extends AbstractCollection implements Stack {
 
     private class MyIterator implements Iterator {
 
+        private int index = 0 ;
+
         @Override
         public boolean hasNext() {
-            return false;
+            return index != indexTop;
+
         }
 
         @Override
         public Object next() {
-            return null;
+            if (index == indexTop){
+                throw new NoSuchElementException();
+            }
+            Object previous = elements[index];
+            index ++;
+            return previous;
         }
     }
 
@@ -60,11 +69,11 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
             System.out.println("Stack is empty");
             return null;
         }
-        Object o = elements[indexTop];
+        Object element = elements[indexTop];
         elements[indexTop] = null;
         indexTop --;
         size --;
-        return  (E) o;
+        return  (E) element;
     }
 
    @Override
