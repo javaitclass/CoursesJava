@@ -5,20 +5,20 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ArrayStack<E> extends AbstractCollection implements Stack {
+public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
 
     private class MyIterator implements Iterator {
         private int index ;
 
         @Override
         public boolean hasNext() {
-            return index != indexTop;
+            return index != size - 1;
 
         }
 
         @Override
         public Object next() {
-            if (index == indexTop){
+            if (index == size - 1){
                 throw new NoSuchElementException();
             }
             return elements[index++];
@@ -28,7 +28,6 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
     private final static int DEFAULT_SIZE_OF_ARRAY = 10;
     private Object[] elements;
     private int size = 0;
-    private int indexTop = -1;
 
 
     public ArrayStack (){
@@ -41,7 +40,7 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
     }
 
     public boolean isEmpty() {
-        return (indexTop == -1);
+        return (size == 0);
     }
 
 
@@ -51,12 +50,12 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
     }
 
     @Override
-    public void push(Object element) {
+    public void push(E element) {
 
         if(isFull()) {
             elements = Arrays.copyOf(elements,Math.round(elements.length * 1.5f));
         }
-        elements[++indexTop] = (E)element;
+        elements[size] = (E)element;
         size ++;
     }
 
@@ -66,9 +65,8 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
             System.out.println("Stack is empty");
             return null;
         }
-        Object element = elements[indexTop];
-        elements[indexTop] = null;
-        indexTop --;
+        Object element = elements[size -1];
+        elements[size - 1] = null;
         size --;
         return  (E) element;
     }
