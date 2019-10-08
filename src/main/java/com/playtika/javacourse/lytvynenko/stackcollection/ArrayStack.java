@@ -8,8 +8,7 @@ import java.util.NoSuchElementException;
 public class ArrayStack<E> extends AbstractCollection implements Stack {
 
     private class MyIterator implements Iterator {
-
-        private int index = 0 ;
+        private int index ;
 
         @Override
         public boolean hasNext() {
@@ -22,17 +21,15 @@ public class ArrayStack<E> extends AbstractCollection implements Stack {
             if (index == indexTop){
                 throw new NoSuchElementException();
             }
-            Object previous = elements[index];
-            index ++;
-            return previous;
+            return elements[index++];
         }
     }
-
 
     private final static int DEFAULT_SIZE_OF_ARRAY = 10;
     private Object[] elements;
     private int size = 0;
     private int indexTop = -1;
+
 
     public ArrayStack (){
         elements = new Object[DEFAULT_SIZE_OF_ARRAY];
