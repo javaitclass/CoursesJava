@@ -8,17 +8,18 @@ import java.util.NoSuchElementException;
 public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
 
     private class MyIterator implements Iterator {
-        private int index ;
+        private int index = 0;
 
         @Override
         public boolean hasNext() {
-            return index != size - 1;
+            //return index != size - 1;
+            return index < size && elements[index] != null;
 
         }
 
         @Override
         public Object next() {
-            if (index == size - 1){
+            if (size != 0 && index == size - 1){
                 throw new NoSuchElementException();
             }
             return elements[index++];
