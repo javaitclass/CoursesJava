@@ -72,6 +72,7 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
         return  (E) element;
     }
 
+
    @Override
     public Iterator iterator() {
        return new MyIterator();
