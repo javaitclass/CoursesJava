@@ -12,14 +12,14 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
 
         @Override
         public boolean hasNext() {
-            //return index != size - 1;
+            index++;
             return index < size && elements[index] != null;
 
         }
 
         @Override
         public Object next() {
-            if (size != 0 && index == size - 1){
+            if (isEmpty()){
                 throw new NoSuchElementException();
             }
             return elements[index++];
@@ -29,7 +29,6 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
     private final static int DEFAULT_SIZE_OF_ARRAY = 10;
     private Object[] elements;
     private int size = 0;
-
 
     public ArrayStack (){
         elements = new Object[DEFAULT_SIZE_OF_ARRAY];
@@ -43,7 +42,6 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
     public boolean isEmpty() {
         return (size == 0);
     }
-
 
     @Override
     public int size() {
@@ -72,11 +70,10 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
         return  (E) element;
     }
 
-
-   @Override
+    @Override
     public Iterator iterator() {
-       return new MyIterator();
-        }
+        return new MyIterator();
+    }
 }
 
 
