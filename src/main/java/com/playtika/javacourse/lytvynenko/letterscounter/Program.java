@@ -1,22 +1,18 @@
 package com.playtika.javacourse.lytvynenko.letterscounter;
 
-
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.stream.Stream;
 
 public class Program {
     public static void main(String[] args) {
 
         String textFile = args[0];
         Path path = Paths.get(textFile);
-
-//        Files.list(path).forEach(
-//                       p ->  {}
-//
-//                );
+        FrequencyLettersDictionary frequencyLettersDictionary = new FrequencyLettersDictionary();
 
         if (args.length != 1) {
             try {
@@ -35,8 +31,15 @@ public class Program {
             return;
         }
 
-        FrequencyLettersDictionary frequencyLettersDictionary = new FrequencyLettersDictionary();
-        frequencyLettersDictionary.appendString(textFile);
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(textFile));
+            String line;
+            while ((line = bufferedReader.readLine()) != null){
+                frequencyLettersDictionary.appendString(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Something went wrong" + e);
+        }
         frequencyLettersDictionary.printDictionary();
     }
 }

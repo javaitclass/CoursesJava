@@ -1,14 +1,9 @@
-package com.playtika.javacourse.lytvynenko.letterscounter;
+package com.playtika.javacourse.lytvynenko.manyfilesletterscounter;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class FrequencyLettersDictionary {
-
-
+public class FrequenceLettersAllFiles {
     Map<Character, Integer> treeMap = new TreeMap<>();
     private int globalCounter = 0;
 
@@ -28,8 +23,7 @@ public class FrequencyLettersDictionary {
         treeMap.entrySet().forEach(entry ->{
             System.out.printf("Частота появления буквы '%s': %4f%n", entry.getKey(), entry.getValue()/(double)globalCounter);
         });
+        System.out.println("\n");
 
     }
-
-
 }
