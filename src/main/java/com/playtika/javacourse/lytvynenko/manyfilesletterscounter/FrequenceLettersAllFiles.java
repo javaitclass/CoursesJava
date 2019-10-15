@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class FrequenceLettersAllFiles {
+
     Map<Character, Integer> treeMap = new TreeMap<>();
     private int globalCounter = 0;
 
@@ -24,6 +25,5 @@ public class FrequenceLettersAllFiles {
             System.out.printf("Частота появления буквы '%s': %4f%n", entry.getKey(), entry.getValue()/(double)globalCounter);
         });
         System.out.println("\n");
-
     }
 }

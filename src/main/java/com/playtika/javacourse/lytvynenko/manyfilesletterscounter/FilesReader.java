@@ -20,7 +20,6 @@ public class FilesReader {
     private void getPathStream (String textFile){
         try {
             Stream<Path> list = Files.list(Paths.get(textFile));
-
             list.forEach(p -> {
                 System.out.println("Фаил : " + p +  "\n");
                 fileReading(p.toString());
