@@ -17,7 +17,7 @@ public class FilesReader {
         program.getPathStream(textFile);
     }
 
-    private void getPathStream (String textFile){
+    public void getPathStream (String textFile){
         try {
             Stream<Path> list = Files.list(Paths.get(textFile));
             list.forEach(p -> {
@@ -29,7 +29,7 @@ public class FilesReader {
         }
     }
 
-    private void fileReading (String textFile){
+    public void fileReading (String textFile){
         try {
             FrequenceLettersAllFiles frequencyLettersDictionary = new FrequenceLettersAllFiles();
 
