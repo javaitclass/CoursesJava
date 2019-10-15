@@ -60,7 +60,6 @@ public class ArrayStackTest {
         assertEquals(true, result);
         result = iterator.hasNext();
         assertEquals(false, result);
-
     }
 
     @Test
