@@ -14,7 +14,6 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
         public boolean hasNext() {
             index++;
             return index < size && elements[index] != null;
-
         }
 
         @Override
@@ -32,7 +31,6 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
 
     public ArrayStack (){
         elements = new Object[DEFAULT_SIZE_OF_ARRAY];
-
     }
 
     private boolean isFull() {
@@ -50,7 +48,6 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
 
     @Override
     public void push(E element) {
-
         if(isFull()) {
             elements = Arrays.copyOf(elements,Math.round(elements.length * 1.5f));
         }
@@ -71,7 +68,7 @@ public class ArrayStack<E> extends AbstractCollection<E> implements Stack<E> {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
         return new MyIterator();
     }
 }
