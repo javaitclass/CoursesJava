@@ -20,7 +20,7 @@ public class FrequenceLettersAllFiles {
     }
 
     public void printDictionary () {
-        System.out.println("Общее количество букв: " + globalCounter);
+        System.out.println("Общее количество букв во всех файлах: " + globalCounter + "\n");
         treeMap.entrySet().forEach(entry ->{
             System.out.printf("Частота появления буквы '%s': %4f%n", entry.getKey(), entry.getValue()/(double)globalCounter);
         });

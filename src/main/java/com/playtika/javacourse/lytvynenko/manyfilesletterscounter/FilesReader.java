@@ -10,7 +10,10 @@ import java.util.stream.Stream;
 
 public class FilesReader {
 
+    private FrequenceLettersAllFiles frequencyLettersDictionary = new FrequenceLettersAllFiles();
+
     public static void main(String[] args) {
+
 
         String textFile = args[0];
         FilesReader program = new FilesReader();
@@ -18,12 +21,13 @@ public class FilesReader {
     }
 
     public void getPathStream (String textFile){
+
         try {
             Stream<Path> list = Files.list(Paths.get(textFile));
             list.forEach(p -> {
-                System.out.println("Фаил : " + p +  "\n");
                 fileReading(p.toString());
             });
+            frequencyLettersDictionary.printDictionary();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -31,14 +35,11 @@ public class FilesReader {
 
     public void fileReading (String textFile){
         try {
-            FrequenceLettersAllFiles frequencyLettersDictionary = new FrequenceLettersAllFiles();
-
             BufferedReader bufferedReader = new BufferedReader(new FileReader(textFile));
             String line;
             while ((line = bufferedReader.readLine()) != null){
                 frequencyLettersDictionary.appendString(line);
             }
-            frequencyLettersDictionary.printDictionary();
         } catch (IOException e) {
             System.out.println("Something went wrong" + e);
         }
